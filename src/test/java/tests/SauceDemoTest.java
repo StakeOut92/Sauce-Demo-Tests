@@ -19,11 +19,8 @@ public class SauceDemoTest extends BaseTest {
         //Click on product
         driver.findElement(By.id("item_4_title_link")).click();
         //Click on button 'ADD TO CART'
-        try {
-            driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
-        } catch (NoSuchElementException e) {
-            Assert.fail();
-        }
+        boolean addToCart = driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).isEnabled();
+        Assert.assertTrue(addToCart, "Cart button is enable");
     }
 
     @Test
@@ -33,11 +30,8 @@ public class SauceDemoTest extends BaseTest {
         //Click on button 'ADD TO CART'
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
         //Click on shopping cart container button
-        try {
-            driver.findElement(By.id("shopping_cart_container")).click();
-        } catch (NoSuchElementException e) {
-            Assert.fail();
-        }
+        boolean cartButton = driver.findElement(By.id("shopping_cart_container")).isEnabled();
+        Assert.assertTrue(cartButton,"Cart button is enable");
     }
 
     @Test
