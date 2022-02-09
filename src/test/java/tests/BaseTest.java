@@ -30,8 +30,4 @@ public class BaseTest {
     public void shutOff() {
         driver.quit();
     }
-
-
-
-
 }
