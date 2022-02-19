@@ -34,7 +34,14 @@ public class LoginUpPage extends BasePage {
     }
 
     public boolean checkLoginIsSuccess(){
-
         return driver.findElement(LOGIN_SUCCESS).isDisplayed();
     }
+
+    public void loginForCart(){
+        openSouceDemoHomepage();
+        inputUsername();
+        inputPassword();
+        clickLoginButton();
+    }
+
 }
