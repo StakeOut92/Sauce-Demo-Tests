@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class CartPage extends BasePage {
 
-    LoginUpPage loginUpPage;
+
 
     private By PRODUCT_NAME = By.id("item_4_title_link");
     private By ADD_TO_CART_BUTTON = By.id("add-to-cart-sauce-labs-backpack");
