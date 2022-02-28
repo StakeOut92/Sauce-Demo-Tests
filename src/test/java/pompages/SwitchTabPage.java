@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class SwitchTabPage extends BasePage{
-    LoginUpPage loginUpPage;
 
     @FindBy(xpath = "//li[@class='social_linkedin']//a")
     WebElement linkedInLink;

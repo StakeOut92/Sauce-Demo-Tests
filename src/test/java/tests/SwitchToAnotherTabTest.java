@@ -13,6 +13,7 @@ public class SwitchToAnotherTabTest extends BaseTest {
     public void loginAtSouceDemoAndSwitchToAnotherTabTest() {
         loginUpPage = new LoginUpPage(driver);
         loginUpPage.loginForCart();
+        driverManager.removeTimeout();
         switchTabPage = new SwitchTabPage(driver);
         switchTabPage.clickLinkedIn();
         Assert.assertTrue(switchTabPage.switchToLinkedInPage());

@@ -1,47 +1,40 @@
-package pompages;
+package fluentpage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import staticdata.UserNamesAndPasswords;
 import staticdata.WebUrls;
 
-public class LoginUpPage extends BasePage {
+public class FluentLoginUpPage extends BasePage{
 
     private By USERNAME_INPUT = By.id("user-name");
     private By PASSWORD_INPUT = By.id("password");
     private By LOGIN_BUTTON = By.id("login-button");
-    private By LOGIN_SUCCESS = By.className("title");
 
 
-    public LoginUpPage(WebDriver driver) {
+
+    public FluentLoginUpPage openSouceDemoHomepage() {
+        driver.get(WebUrls.SAUCE_DEMO_HOMEPAGE);
+        return this;
+    }
+
+    public FluentLoginUpPage inputUsername() {
+        driver.findElement(USERNAME_INPUT).sendKeys(UserNamesAndPasswords.USER_NAME_ONE);
+        return this;
+    }
+
+    public FluentLoginUpPage inputPassword(){
+        driver.findElement(PASSWORD_INPUT).sendKeys(UserNamesAndPasswords.USER_PASSWORD);
+        return this;
+    }
+
+    public FluentLoginUpPage clickLoginButton(){
+        driver.findElement(LOGIN_BUTTON).click();
+        return this;
+    }
+
+
+    public FluentLoginUpPage(WebDriver driver) {
         super(driver);
     }
-
-    public void openSouceDemoHomepage() {
-        driver.get(WebUrls.SAUCE_DEMO_HOMEPAGE);
-    }
-
-    public void inputUsername() {
-        driver.findElement(USERNAME_INPUT).sendKeys(UserNamesAndPasswords.USER_NAME_ONE);
-    }
-
-    public void inputPassword(){
-        driver.findElement(PASSWORD_INPUT).sendKeys(UserNamesAndPasswords.USER_PASSWORD);
-    }
-
-    public void clickLoginButton(){
-        driver.findElement(LOGIN_BUTTON).click();
-    }
-
-    public boolean checkLoginIsSuccess(){
-        return driver.findElement(LOGIN_SUCCESS).isDisplayed();
-    }
-
-    public void loginForCart(){
-        openSouceDemoHomepage();
-        inputUsername();
-        inputPassword();
-        clickLoginButton();
-    }
-
 }
