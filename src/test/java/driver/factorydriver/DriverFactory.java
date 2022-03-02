@@ -9,8 +9,8 @@ public class DriverFactory {
             case CHROME:
                 driverManager = new ChromeDriverManager();
                 break;
-            case MOZILLA:
-                driverManager = new MozillaDriverManager();
+            case EDGE:
+                driverManager = new EdgeDriverManager();
                 break;
             default:
                 throw new IllegalStateException("Unexpected driver type: " + type);
