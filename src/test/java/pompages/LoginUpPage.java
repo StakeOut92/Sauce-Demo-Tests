@@ -22,7 +22,7 @@ public class LoginUpPage extends BasePage {
     }
 
     public void inputUsername() {
-        driver.findElement(USERNAME_INPUT).sendKeys(UserNamesAndPasswords.USER_NAME);
+        driver.findElement(USERNAME_INPUT).sendKeys(UserNamesAndPasswords.USER_NAME_ONE);
     }
 
     public void inputPassword(){
