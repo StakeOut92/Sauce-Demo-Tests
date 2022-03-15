@@ -3,11 +3,12 @@ package tests;
 import pompages.LoginUpPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilites.Retry;
 
 public class LoginUpTest extends BaseTest {
     LoginUpPage loginUpPage;
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void loginUpTest() {
         loginUpPage = new LoginUpPage(driver);
         loginUpPage.openSouceDemoHomepage();
