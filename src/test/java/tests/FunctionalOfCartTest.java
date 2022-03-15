@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pompages.CartPage;
 import pompages.LoginUpPage;
+import utilites.Retry;
 
 import java.sql.Driver;
 
@@ -12,7 +13,7 @@ public class FunctionalOfCartTest extends BaseTest {
     CartPage cartPage;
     LoginUpPage loginUpPage;
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void checkAddToCartButtonIsEnableTest() {
         cartPage = new CartPage(driver);
         loginUpPage = new LoginUpPage(driver);
@@ -21,7 +22,7 @@ public class FunctionalOfCartTest extends BaseTest {
         Assert.assertTrue(cartPage.addToCartButtonIsEnable(), "Add to cart button is not enable");
     }
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void moveToCartTest() {
         cartPage = new CartPage(driver);
         loginUpPage = new LoginUpPage(driver);
@@ -31,7 +32,7 @@ public class FunctionalOfCartTest extends BaseTest {
         Assert.assertTrue(cartPage.shoppingCartButtonIsEnable(), "Shopping cart button is not enable");
     }
 
-    @Test
+    @Test()//retryAnalyzer = Retry.class)
     public void checkInformationAboutProductInCartTest() {
         cartPage = new CartPage(driver);
         loginUpPage = new LoginUpPage(driver);
